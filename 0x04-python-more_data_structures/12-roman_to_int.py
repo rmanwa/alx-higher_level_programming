@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 def to_subtract(list_num):
-    """sUBRRACTS"""
     to_sub = 0
     max_list = max(list_num)
 
@@ -30,3 +29,12 @@ def roman_to_int(roman_string):
             if r_num == ch:
                 if rom_n.get(ch) <= last_rom:
                     num += to_subtract(list_num)
+                    list_num = [rom_n.get(ch)]
+                else:
+                    list_num.append(rom_n.get(ch))
+
+                last_rom = rom_n.get(ch)
+
+    num += to_subtract(list_num)
+
+    return (num)
