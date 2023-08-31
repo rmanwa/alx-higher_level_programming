@@ -1,17 +1,16 @@
 #!/usr/bin/python3
-safe_print_integer = __import__('1-safe_print_integer').safe_print_integer
+Square = __import__('1-square').Square
 
-value = 89
-has_been_print = safe_print_integer(value)
-if not has_been_print:
-    print("{} is not an integer".format(value))
+my_square = Square(3)
+print(type(my_square))
+print(my_square.__dict__)
 
-value = -89
-has_been_print = safe_print_integer(value)
-if not has_been_print:
-    print("{} is not an integer".format(value))
+try:
+    print(my_square.size)
+except Exception as e:
+    print(e)
 
-value = "School"
-has_been_print = safe_print_integer(value)
-if not has_been_print:
-    print("{} is not an integer".format(value
+try:
+    print(my_square.__size)
+except Exception as e:
+    print(e)
